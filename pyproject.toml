@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "skill-browser-session"
+version = "0.1.0"
+description = "External browser session skill bridge"
+requires-python = ">=3.11"
+# Core ecosystem is provided by the parent JARVIS runtime.
+# This skill requires the core ecosystem to be importable (sys.path must include core repo).
+dependencies = []  # runtime dependency: ecosystem (injected by loader)
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
